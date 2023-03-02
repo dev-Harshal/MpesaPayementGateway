@@ -3,7 +3,7 @@ import os
 from datetime import timedelta
 
 # Project Name
-PROJECT_NAME = "*****"
+PROJECT_NAME = "m-pesa-integration"
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -124,7 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 # Change Timezone
-# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -150,7 +150,7 @@ AUTH_USER_MODEL = 'atomicloops.Users'
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
-    "SIGNING_KEY": "*****",
+    "SIGNING_KEY": "a2%yej*lz$8x-!gr1d4z-b*zobt_cur%n4fj&_rj5^scng(r^7",
     'ROTATE_REFRESH_TOKENS': True,
     'BLACKLIST_AFTER_ROTATION': True
 }

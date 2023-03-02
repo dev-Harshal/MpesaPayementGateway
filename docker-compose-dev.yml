@@ -5,7 +5,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile.dev
-    container_name: "*****"
+    container_name: m-pesa-integration-backend
     user: "${UID}:${GID}"
     environment:
       ENV: dev
@@ -19,7 +19,7 @@ services:
   
   db:
     image: postgres:14
-    container_name: "*****"
+    container_name: m-pesa-integration-db
     restart: always
     user: postgres
     environment:
@@ -32,10 +32,10 @@ services:
     expose:
       - 5432
     volumes:
-      - <volume_name>:/var/lib/postgresql/data
+      - m-pesa-integration-db:/var/lib/postgresql/data
 
   pgadmin:
-    container_name: "*****"
+    container_name: m-pesa-integration-admin
     image: dpage/pgadmin4
     restart: always
     environment:
@@ -44,12 +44,12 @@ services:
     ports:
       - "5050:80"
     volumes:
-      - <volume_name>:/var/lib/pgadmin
+      - m-pesa-integration-admin:/var/lib/pgadmin
 
   rabbit-mq:
     image: rabbitmq:3.7-management
     restart: always
-    container_name: "*****"
+    container_name: m-pesa-integration-rabbit-mq
     environment:
       - RABBITMQ_DEFAULT_USER=admin
       - RABBITMQ_DEFAULT_PASS=admin
@@ -58,7 +58,7 @@ services:
       - "15672:15672"
       
   celery:
-    container_name: "*****"
+    container_name: m-pesa-integration-celery
     build: .
     command: celery -A src worker -l INFO  -E -f /opt/logs/celery/celery.logs
     volumes:
@@ -68,7 +68,7 @@ services:
       - backend
 
   flower:
-    container_name: "*****"
+    container_name: m-pesa-integration-flower
     build: .
     command: celery -A src flower --port=5555
     image: mher/flower:0.9.7
@@ -82,11 +82,11 @@ services:
       - rabbit-mq
   
   redis:
-    container_name: "*****"
+    container_name: m-pesa-integration-redis
     image: redis
     expose:
       - 6379    
 
-# volumes:
-#   <volume_name>:
-#   <volume_name>:
+volumes:
+  m-pesa-integration-db:
+  m-pesa-integration-admin:
