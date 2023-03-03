@@ -54,6 +54,9 @@ INSTALLED_APPS = [
     "debug_toolbar",
     "import_export",
     "rest_framework_simplejwt.token_blacklist",
+    "paymentGateway",
+    'mpesa',
+    
 ]
 
 MIDDLEWARE = [
@@ -226,3 +229,10 @@ CACHE_TTL = 60 * 5
 
 #
 APPEND_SLASH = False
+
+
+
+MPESA_CONFIG = {
+'CONSUMER_KEY': 'toAw8Ui6s79sA0Fc0BKfPvtpPxuVYfHx', 'CONSUMER_SECRET': 'LJotWTU1MhfovXDH', 'HOST_NAME': '<Your hostname e.g https://localhost>', 'PASS_KEY': 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919', 'SAFARICOM_API': 'https://sandbox.safaricom.co.ke', 'SHORT_CODE': '174379'
+
+}
