@@ -228,11 +228,15 @@ CACHES = {
 CACHE_TTL = 60 * 5
 
 #
-APPEND_SLASH = False
+APPEND_SLASH = True
 
 
 
-MPESA_CONFIG = {
-'CONSUMER_KEY': 'toAw8Ui6s79sA0Fc0BKfPvtpPxuVYfHx', 'CONSUMER_SECRET': 'LJotWTU1MhfovXDH', 'HOST_NAME': '<Your hostname e.g https://localhost>', 'PASS_KEY': 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919', 'SAFARICOM_API': 'https://sandbox.safaricom.co.ke', 'SHORT_CODE': '174379'
+MPESA_CONFIG={
+    'CONSUMER_KEY' : 'S31aX8JIAKSCU7VLIfPptjLibw9iOxus',
+    'CONSUMER_SECRET' : 'lN3RMeGyY2fS6MwG',
+    'SHORT_CODE' : '174379',
+    'PASS_KEY' : 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919',
+    'HOST_NAME' : 'https://198c-114-79-189-129.in.ngrok.io',
 
 }
